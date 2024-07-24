@@ -1,0 +1,32 @@
+.tree.dark {
+    color: #ffffff;
+  }
+  
+  .tree.dark .list-group-item {
+    background-color: #1c1c1c;
+    border-color: #333;
+  }
+  
+  .tree.light {
+    color: #000000;
+  }
+  
+  .tree.light .list-group-item {
+    background-color: #ffffff;
+    border-color: #ccc;
+  }
+  
+  .btn-link {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .btn-link:hover {
+    color: #0056b3;
+    text-decoration: underline;
+  }
+  
+  .font-weight-bold {
+    font-weight: bold;
+  }
+  

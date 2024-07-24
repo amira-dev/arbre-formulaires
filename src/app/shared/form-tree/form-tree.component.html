@@ -1,0 +1,34 @@
+<div class="tree" [ngClass]="theme">
+    <ul class="list-group">
+      <ng-container *ngFor="let node of tree">
+        <li class="list-group-item">
+          <button class="btn btn-link" (click)="toggleNode(node)">
+            <i class="bi" [ngClass]="node.collapsed ? 'bi-chevron-right' : 'bi-chevron-down'" *ngIf="node.children?.length"></i>
+            {{ node.name }}
+          </button>
+          <ul *ngIf="!node.collapsed" class="list-group">
+            <ng-container *ngFor="let child of node.children">
+              <li class="list-group-item">
+                <button class="btn btn-link" (click)="toggleNode(child)">
+                  <i class="bi" [ngClass]="child.collapsed ? 'bi-chevron-right' : 'bi-chevron-down'" *ngIf="child.children?.length"></i>
+                  {{ child.name }}
+                </button>
+                <ul *ngIf="!child.collapsed" class="list-group">
+                  <ng-container *ngFor="let grandChild of child.children">
+                    <li class="list-group-item">
+                      <button class="btn btn-link"
+                        [ngClass]="{'font-weight-bold': isSelected(grandChild)}"
+                        (click)="onNodeSelected(grandChild)">
+                        {{ grandChild.name }}
+                      </button>
+                    </li>
+                  </ng-container>
+                </ul>
+              </li>
+            </ng-container>
+          </ul>
+        </li>
+      </ng-container>
+    </ul>
+  </div>
+  
